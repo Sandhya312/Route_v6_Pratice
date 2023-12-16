@@ -12,8 +12,6 @@ function Page() {
   // }, [])
 
   const Navigate = useNavigate();
-  // const routeContent1= location.state.content1.spit(" ")[0];
-   
   console.log(location);
 
   return (
@@ -28,14 +26,14 @@ function Page() {
       <div>
         <button className="btn btn-primary"
           onClick={() => {
-            Navigate(`/page/${pageNo}/${(location.state.content1).split(" ")[0]}`)
+            Navigate(`/page/${pageNo}/${(location.state.content1).split(" ")[0]}`,{state:{pagename:pageNo,content:location.state.content1}})
           }}
         >{location.state.content1} section</button>
         {"      "}
         {"      "}
         <button
           onClick={() => {
-            Navigate(`/${pageNo}/${(location.state.content2).split(" ")[0]}`)
+            Navigate(`/${pageNo}/${(location.state.content2).split(" ")[0]}`,{state:{pagename:pageNo,content:location.state.content1}})
           }}
           className="btn btn-success">{location.state.content2} section</button>
       </div>
